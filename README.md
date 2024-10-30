@@ -34,6 +34,26 @@ Discussion forums: https://github.com/esnet/iperf/discussions
 
 Reporting security vulnerabilities: iperf@es.net
 
+# Building and running iPerf3 with Docker
+
+Run the following command in the project directory to build the container and start iPerf3 in server mode:
+
+```bash
+docker-compose up --build
+```
+
+### Running iPerf3 in Server Mode
+
+By default, the Docker container will run iPerf3 in server mode, listening on port 5201.
+
+### Running iPerf3 in Client Mode
+
+To run iPerf3 as a client, open another terminal and use the following command:
+
+```bash
+docker exec -it iperf_iperf3_1 iperf3 -c <server-ip> -p 5201 -u
+```
+
 Obtaining iperf3
 ----------------
 
